@@ -1,4 +1,7 @@
-//repetição de código:
+import { Cliente } from "./Cliente.js"
+import { ContaCorrente } from "./ContaCorrente.js";
+
+//repetição de código- maneira correta em Cliente.js:
 const cliente1Nome = "Ricardo";
 const cliente1cpf = 11122233309;
 const cliente1Agencia = 1001;
@@ -14,17 +17,14 @@ const cliente3cpf = 66654644409;
 const cliente3Agencia = 1001;
 const cliente3Saldo = 0;
 
-//maneira correta de pensar para não ter repetição de código:
-class Cliente{
-  nome;
-  cpf;
-  agencia;
-  saldo;
-}
+==============================
 
-const cliente1 = new Cliente();
+const contaCorrenteRicardo = new ContaCorrente();
+contaCorrenteRicardo.agencia = 1001;
+contaCorrenteRicardo.cliente = cliente1;
 
-cliente1.nome = "Ricardo";
-cliente1.cpf = 11122233309;
-cliente1.agencia = 1001;
-cliente1.saldo = 0;
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.depositar(-100);
+const valorSacado = contaCorrenteRicardo.sacar(50);
+  
